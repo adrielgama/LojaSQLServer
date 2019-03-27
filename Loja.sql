@@ -13,15 +13,6 @@ idFornecedor INT NOT NULL,
 FOREIGN KEY (idFornecedor) REFERENCES fornecedor(idFornecedor)
 )
 
-CREATE TABLE itemNota(
-numeroNota INT NOT NULL,
-idProduto INT NOT NULL,
-qtddeItem INT NOT NULL,
-valorItem NUMERIC(12,2) NOT NULL,
-FOREIGN KEY (numeroNota) REFERENCES notaFiscal(numeroNota),
-FOREIGN KEY (idProduto) REFERENCES produto(idProduto)
-)
-
 CREATE TABLE cliente(
 idCliente INT PRIMARY KEY NOT NULL,
 nomeCliente VARCHAR(20) NOT NULL,
@@ -39,6 +30,15 @@ valorNota NUMERIC(12,2) NOT NULL,
 dataEmissao DATE NOT NULL,
 idCliente INT NOT NULL,
 FOREIGN KEY (idCliente) REFERENCES cliente(idCliente)
+)
+
+CREATE TABLE itemNota(
+numeroNota INT NOT NULL,
+idProduto INT NOT NULL,
+qtddeItem INT NOT NULL,
+valorItem NUMERIC(12,2) NOT NULL,
+FOREIGN KEY (numeroNota) REFERENCES notaFiscal(numeroNota),
+FOREIGN KEY (idProduto) REFERENCES produto(idProduto)
 )
 
 --------------------------------------------------------------------------------------------------------------
